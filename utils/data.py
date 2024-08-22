@@ -39,13 +39,3 @@ def generate_perfect_pattern(reciprocal_lattice_matrix, max_q, resolution):
         pattern[idx] += 1
     pattern[0] = 0
     return hkls, qs, idx_bin, pattern
-
-if __name__ == '__main__':
-    import matplotlib.pyplot as plt
-
-    matrix = generate_standard_matrix()
-    hkls, qs, idx_bin, pattern = generate_perfect_pattern(matrix, 2, 1023)
-    print(hkls)
-    plt.figure()
-    plt.plot(pattern)
-    plt.savefig('pattern_test.png')
